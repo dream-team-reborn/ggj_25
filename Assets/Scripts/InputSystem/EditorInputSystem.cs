@@ -6,6 +6,7 @@ namespace InputSystem
     {
         private bool isDragging;
         private Vector3 startTouchPos;
+        private Vector3 lastTouchPos;
 
         public void Initialize()
         {
@@ -22,6 +23,7 @@ namespace InputSystem
             if (Input.GetMouseButtonDown(0))
             {
                 startTouchPos = Input.mousePosition;
+                lastTouchPos = startTouchPos;
                 isDragging = true;
             }
                 
@@ -32,8 +34,16 @@ namespace InputSystem
             
             if (!isDragging)
                 return 0;
-            
-            return startTouchPos.x - Input.mousePosition.x > 0 ? (sbyte)1 : (sbyte)-1;
+
+            sbyte returnVal = 0;
+            var diff = lastTouchPos - Input.mousePosition;
+
+            if (!(diff.magnitude < 0.07f))
+                returnVal = diff.x > 0 ? (sbyte)1 : (sbyte)-1;
+
+            lastTouchPos = Input.mousePosition;
+
+            return returnVal;
         }
     }
 }
