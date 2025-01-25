@@ -9,6 +9,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera virtualCamera;
     [SerializeField] private byte health;
     [SerializeField] private SpriteRendererEraser eraser;
+    [SerializeField] private GameObject spray;
 
     private Vector3 startingPos;
     private Vector3 lastFramePos;
@@ -23,12 +24,16 @@ public class PlayerManager : MonoBehaviour
         
         startingPos = transform.position;
         lastFramePos = transform.position;
+
+        spray.GetComponent<Animator>().SetTrigger("spawn");
     }
 
     private void OnDestroy()
     {
         InputSystem.InputSystem.Instance.OnMove -= OnMove;
         InputSystem.InputSystem.Instance.OnRotate -= OnRotate;
+
+        spray.GetComponent<Animator>().SetTrigger("spawn");
     }
 
     private void OnMove(float obj)
