@@ -31,7 +31,7 @@ public class PlayerManager : MonoBehaviour
 
     private void OnMove(float obj)
     {
-        rb.AddForce(transform.up * speed, ForceMode2D.Force);
+        rb.AddForce(transform.up * speed, ForceMode2D.Impulse);
 
         return;
 
