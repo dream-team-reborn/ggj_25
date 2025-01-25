@@ -43,4 +43,12 @@ public class PlayerManager : MonoBehaviour
         transform.Rotate((Vector3.forward * (dir * 100 * Time.deltaTime)));
         virtualCamera.transform.Rotate((Vector3.forward * (dir * 100 * Time.deltaTime)));
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }
