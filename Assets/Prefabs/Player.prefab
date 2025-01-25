@@ -219,7 +219,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 2.5
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -245,12 +245,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e442325e100fe7444bc2d50fc4008dcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 120
+  speed: 1800
   rotationSpeed: 150
+  stopThreshold: 50
   spriteEraser: {fileID: 0}
   virtualCamera: {fileID: 0}
   health: 4
   eraser: {fileID: 0}
+  spray: {fileID: 0}
 --- !u!95 &9149749739573488696
 Animator:
   serializedVersion: 5
