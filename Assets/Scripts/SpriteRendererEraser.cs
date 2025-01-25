@@ -20,7 +20,7 @@ public class SpriteRendererEraser : MonoBehaviour
         mat = new Material(Shader.Find("Shader Graphs/ErasableSprite"));
         
         var scale = spriteRenderer.transform.localScale;
-        maskTexture = new Texture2D((int)scale.x, (int)scale.y, TextureFormat.RG16, false);
+        maskTexture = new Texture2D(spriteRenderer.sprite.texture.width * 2, spriteRenderer.sprite.texture.height * 2, TextureFormat.RG16, false);
 
         for (int y = 0; y < maskTexture.height; y++) {
             for (int x = 0; x < maskTexture.width; x++) {
@@ -50,9 +50,9 @@ public class SpriteRendererEraser : MonoBehaviour
 
     public void EraseAt(Vector2 pos)
     {
-        // pos -= new Vector2(traceSize * 0.5f, traceSize * 0.5f);
-        Vector3 l = spriteRenderer.transform.InverseTransformPoint(pos);
-        EraseAt(l.x + 0.5f, l.y + 0.5f);
+        var normalizedPos = new Vector2(Mathf.InverseLerp(spriteRenderer.bounds.min.x, spriteRenderer.bounds.max.x, pos.x),
+            Mathf.InverseLerp(spriteRenderer.bounds.min.y, spriteRenderer.bounds.max.y, pos.y));
+        EraseAt(normalizedPos.x, normalizedPos.y);
     }
 
     public void EraseAt(float relX, float relY)
