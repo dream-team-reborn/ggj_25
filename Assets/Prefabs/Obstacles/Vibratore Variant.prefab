@@ -137,5 +137,61 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4735442331339477650, guid: 7f82b5b5c74bc443f82833b53e7a0404,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5313791800435102297}
   m_SourcePrefab: {fileID: 100100000, guid: 7f82b5b5c74bc443f82833b53e7a0404, type: 3}
+--- !u!1 &9203389757302879453 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4735442331339477650, guid: 7f82b5b5c74bc443f82833b53e7a0404,
+    type: 3}
+  m_PrefabInstance: {fileID: 4471697903086724687}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5313791800435102297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9203389757302879453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -3.9029984, y: -17.176554, z: 0}
+  - {x: -5.1075783, y: -5.837733, z: 0}
+  - {x: -3.8872216, y: 4.6067076, z: 0}
+  - {x: -1.1965457, y: 6.8529577, z: 0}
+  - {x: -1.3331288, y: 7.9746184, z: 0}
+  - {x: -4.5982995, y: 9.135096, z: 0}
+  - {x: -5.359536, y: 12.150814, z: 0}
+  - {x: -4.120213, y: 17.312298, z: 0}
+  - {x: -2.239776, y: 20.56133, z: 0}
+  - {x: 0.6521436, y: 21.630938, z: 0}
+  - {x: 4.659121, y: 20.818493, z: 0}
+  - {x: 5.907721, y: 17.063463, z: 0}
+  - {x: 6.1063247, y: 12.979598, z: 0}
+  - {x: 5.0519686, y: 9.213212, z: 0}
+  - {x: 2.3112104, y: 7.474221, z: 0}
+  - {x: 4.337644, y: 6.3940578, z: 0}
+  - {x: 4.6737647, y: -3.724971, z: 0}
+  - {x: 1.8439547, y: -17.96319, z: 0}
+  - {x: 0.06373966, y: -20.970474, z: 0}
+  - {x: -1.7341871, y: -20.778694, z: 0}
+  m_ShapePathHash: -1047755048
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -423730
+  m_LocalBounds:
+    m_Center: {x: 0.373394, y: 0.3302307, z: 0}
+    m_Extent: {x: 5.73293, y: 21.300705, z: 0}
