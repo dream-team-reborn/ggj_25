@@ -4,17 +4,17 @@ using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
-    [SerializeField] private Image player;
     [SerializeField] private float speed = 0.5f;
     [SerializeField] private SpriteEraser spriteEraser;
-
-    private Transform playerTrns;
+    
+    private Rigidbody2D rb;
     
     public void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
+        
         InputSystem.InputSystem.Instance.OnMove += OnMove;
         InputSystem.InputSystem.Instance.OnRotate += OnRotate;
-        playerTrns = player.transform;
     }
 
     private void OnDestroy()
@@ -26,9 +26,13 @@ public class PlayerManager : MonoBehaviour
     private void OnMove(float obj)
     {
         Debug.Log("MOVING");
-        playerTrns.Translate(playerTrns.up * (speed * Time.deltaTime));
+        //transform.Translate(transform.up * (speed * Time.deltaTime));
+        
+        rb.AddForce(transform.up * speed, ForceMode2D.Force);
 
-        Vector3 screenPos = Camera.main.WorldToScreenPoint(playerTrns.position);
+        return;
+
+        Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
         RectTransformUtility.ScreenPointToLocalPointInRectangle(spriteEraser.RectTransform, screenPos, Camera.main, out var localPos);
         Vector2 normalizedPos = Rect.PointToNormalized(spriteEraser.RectTransform.rect, localPos);
         
@@ -37,6 +41,6 @@ public class PlayerManager : MonoBehaviour
     
     private void OnRotate(sbyte dir)
     {
-        playerTrns.Rotate((Vector3.forward * (dir * 100 * Time.deltaTime)));
+        transform.Rotate((Vector3.forward * (dir * 100 * Time.deltaTime)));
     }
 }

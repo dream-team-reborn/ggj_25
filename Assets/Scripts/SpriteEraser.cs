@@ -9,14 +9,14 @@ public class SpriteEraser : MonoBehaviour
     
     private Texture2D _eraseTexInstance;
     private RectTransform _rectTransform;
-    private Image _image;
+    private SpriteRenderer _image;
     private Vector2 _prevMousePos;
 
     public RectTransform RectTransform => _rectTransform;
     
     void Start()
     {
-        _image = GetComponent<Image>();
+        _image = GetComponent<SpriteRenderer>();
         _rectTransform = GetComponent<RectTransform>();
 
         // Create an instance of erase texture
