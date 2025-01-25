@@ -11,6 +11,16 @@ namespace InputSystem
         private int sampleRate = 44100;
         private bool isMicrophoneInitialized = false;
         
+        private bool isDragging;
+        private bool isInputEnabled;
+        private bool hasMoved;
+
+        private Vector3 startTouchPos;
+
+        private float startDragTime;
+        private float maxDragTime = 200.0f;
+        private float minDelta = 0.05f;
+        
         public void Initialize()
         {
             if (Microphone.devices.Length > 0) {
@@ -44,7 +54,26 @@ namespace InputSystem
         
         public sbyte GetRotationInput()
         {
-            return 0;
+            if (Input.GetMouseButtonDown(0))
+            {
+                startTouchPos = Input.mousePosition;
+                isDragging = true;
+            }
+                
+            if (Input.GetMouseButtonUp(0))
+            {
+                isDragging = false;
+            }
+                
+            // if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)
+            // {
+            //     OnInputPressed(touch.position);
+            // }
+            
+            if (!isDragging)
+                return 0;
+            
+            return startTouchPos.x - Input.mousePosition.x > 0 ? (sbyte)1 : (sbyte)-1;
         }
         
         private float GetAverageVolume(float[] samples)
