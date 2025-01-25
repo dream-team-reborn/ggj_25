@@ -46,7 +46,7 @@ public class PlayerManager : MonoBehaviour
     private void OnRotate(sbyte dir)
     {
         transform.Rotate((Vector3.forward * (dir * rotationSpeed * Time.deltaTime)));
-        virtualCamera.transform.Rotate((Vector3.forward * (dir * 100 * Time.deltaTime)));
+        virtualCamera.transform.eulerAngles = transform.eulerAngles;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -63,6 +63,7 @@ public class PlayerManager : MonoBehaviour
             transform.position = startingPos;
             transform.rotation = Quaternion.identity;
             virtualCamera.transform.rotation = Quaternion.identity;
+            rb.velocity = Vector2.zero;
         }
     }
 }
