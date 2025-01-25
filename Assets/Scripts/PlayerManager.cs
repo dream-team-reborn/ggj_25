@@ -1,5 +1,7 @@
 using Cinemachine;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -10,6 +12,9 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private byte health;
     [SerializeField] private SpriteRendererEraser eraser;
     [SerializeField] private GameObject spray;
+    [SerializeField] private TMP_Text healthText;
+    [SerializeField] private Image healthIcon;
+    [SerializeField] private Sprite[] healthSprites; // ordered from the least filled
 
     private Vector3 startingPos;
     private Vector3 lastFramePos;
@@ -26,14 +31,13 @@ public class PlayerManager : MonoBehaviour
         lastFramePos = transform.position;
 
         spray.GetComponent<Animator>().SetTrigger("spawn");
+        healthText.SetText(health.ToString());
     }
 
     private void OnDestroy()
     {
         InputSystem.InputSystem.Instance.OnMove -= OnMove;
         InputSystem.InputSystem.Instance.OnRotate -= OnRotate;
-
-        spray.GetComponent<Animator>().SetTrigger("spawn");
     }
 
     private void OnMove(float obj)
@@ -67,6 +71,9 @@ public class PlayerManager : MonoBehaviour
             }
             
             health--;
+            healthText.SetText(health.ToString());
+            healthIcon.sprite = healthSprites[Mathf.Min(health, healthSprites.Length - 1)];
+            spray.GetComponent<Animator>().SetTrigger("spawn");
             transform.position = startingPos;
             transform.rotation = Quaternion.identity;
             virtualCamera.transform.rotation = Quaternion.identity;
