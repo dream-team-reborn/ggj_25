@@ -25,9 +25,6 @@ public class PlayerManager : MonoBehaviour
 
     private void OnMove(float obj)
     {
-        Debug.Log("MOVING");
-        //transform.Translate(transform.up * (speed * Time.deltaTime));
-        
         rb.AddForce(transform.up * speed, ForceMode2D.Force);
 
         return;
