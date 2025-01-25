@@ -11,6 +11,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private SpriteRendererEraser eraser;
 
     private Vector3 startingPos;
+    private Vector3 lastFramePos;
     private Rigidbody2D rb;
     
     public void Start()
@@ -21,6 +22,7 @@ public class PlayerManager : MonoBehaviour
         InputSystem.InputSystem.Instance.OnRotate += OnRotate;
         
         startingPos = transform.position;
+        lastFramePos = transform.position;
     }
 
     private void OnDestroy()
@@ -45,6 +47,7 @@ public class PlayerManager : MonoBehaviour
     private void OnRotate(sbyte dir)
     {
         transform.Rotate((Vector3.forward * (dir * rotationSpeed * Time.deltaTime)));
+        rb.velocity = transform.up * rb.velocity.magnitude;
         virtualCamera.transform.eulerAngles = transform.eulerAngles;
     }
 
@@ -66,11 +69,24 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
+    private Vector3 newPos, newDir;
+    
     private void Update()
     {
         if (rb.velocity.magnitude > 0.1f)
         {
-            eraser.EraseAt(transform.position);
+            newPos = transform.position;
+            newDir = newPos - lastFramePos;
+            int ticks = Mathf.CeilToInt(0.005f * rb.velocity.magnitude);
+            
+            for (int i = 0; i < ticks; i++)
+            {
+                var pos = lastFramePos + newDir * i / ticks;
+                eraser.EraseAt(pos);
+            }
+            
+            eraser.UpdateTexture();
+            lastFramePos = transform.position;
         }
     }
 }

@@ -6,6 +6,8 @@ public class SpriteRendererEraser : MonoBehaviour
     [Header("Elements")]
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private int traceSize = 30;
+    [SerializeField] private int brushRadius;
+    
     [Header("Debug stuff")]
     [SerializeField] private Texture2D maskTexture;
     [SerializeField] private Material mat;
@@ -55,17 +57,26 @@ public class SpriteRendererEraser : MonoBehaviour
 
     public void EraseAt(float relX, float relY)
     {
-        int xStart = Mathf.Clamp((int)(relX * maskTexture.width) - traceSize / 2, 0, maskTexture.width - traceSize);
-        int yStart = Mathf.Clamp((int)(relY * maskTexture.height) - traceSize / 2, 0, maskTexture.height - traceSize);
+        int xStart = (int)(relX * maskTexture.width);
+        int yStart = (int)(relY * maskTexture.height);
 
-        for (int y = 0; y < traceSize; y++) {
-            for (int x = 0; x < traceSize; x++) {
-                int px = xStart + x;
-                int py = yStart + y;
-                maskTexture.SetPixel(px, py, Color.red);
+        for (int x = -Mathf.FloorToInt(brushRadius); x < Mathf.FloorToInt(brushRadius); x++)
+        {
+            for (int y = -Mathf.FloorToInt(brushRadius); y < Mathf.FloorToInt(brushRadius); y++)
+            {
+                if (x * x + y * y <= brushRadius * brushRadius)
+                {
+                    int px = xStart + x;
+                    int py = yStart + y;
+
+                    maskTexture.SetPixel(px, py, Color.red);
+                }
             }
         }
-
+    }
+    
+    public void UpdateTexture()
+    {
         maskTexture.Apply();
         mat.SetTexture(ERASE_TX_NAME, maskTexture);
     }

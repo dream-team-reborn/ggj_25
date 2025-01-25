@@ -1058,12 +1058,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 759425392}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 204d54558f180324ea4015df58afeee7, type: 3}
+  m_Script: {fileID: 11500000, guid: 150fac2dac16a6d4cb17e085677981c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eraseTexture: {fileID: 0}
-  brushSize: 200
-  nero: {fileID: 2800000, guid: 4b39862c1c1ba54428b824755868ae3c, type: 3}
+  spriteRenderer: {fileID: 759425395}
+  traceSize: 75
+  brushRadius: 60
+  maskTexture: {fileID: 0}
+  mat: {fileID: 0}
 --- !u!1 &770909665
 GameObject:
   m_ObjectHideFlags: 0
@@ -4242,9 +4244,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4929236508377972808, guid: 181d9087f221a4689802ee5b030a59e9,
         type: 3}
-      propertyPath: spriteEraser
+      propertyPath: eraser
       value: 
       objectReference: {fileID: 759425397}
+    - target: {fileID: 4929236508377972808, guid: 181d9087f221a4689802ee5b030a59e9,
+        type: 3}
+      propertyPath: spriteEraser
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4929236508377972808, guid: 181d9087f221a4689802ee5b030a59e9,
         type: 3}
       propertyPath: virtualCamera
