@@ -71,6 +71,9 @@ public class PlayerManager : MonoBehaviour
             health--;
             healthText.SetText(health.ToString());
             healthIcon.sprite = healthSprites[Mathf.Min(health, healthSprites.Length - 1)];
+            GetComponent<Animator>().SetTrigger("explode");
+
+
             spray.GetComponent<Animator>().SetTrigger("spawn");
             GetComponent<Animator>().SetTrigger("spawn");
             transform.position = startingPos;
