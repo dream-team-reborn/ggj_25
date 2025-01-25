@@ -162,8 +162,8 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.dreamteamreborn.bubble
-    Standalone: com.Unity-Technologies.com.unity.template.urp-blank
-    iPhone: com.Unity-Technologies.com.unity.template.urp-blank
+    Standalone: com.dreamteamreborn.bubble
+    iPhone: com.dreamteamreborn.bubble
   buildNumber:
     Standalone: 0
     VisionOS: 0
