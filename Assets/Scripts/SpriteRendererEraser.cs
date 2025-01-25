@@ -14,6 +14,9 @@ public class SpriteRendererEraser : MonoBehaviour
     
     private readonly int MAIN_TX_NAME = Shader.PropertyToID("_MainTex");
     private readonly int ERASE_TX_NAME = Shader.PropertyToID("_EraseTex");
+    
+    public SpriteRenderer SpriteRenderer => spriteRenderer;
+    public Texture2D MaskTexture => maskTexture;
 
     private void Start()
     {
@@ -48,15 +51,16 @@ public class SpriteRendererEraser : MonoBehaviour
         }
     }
 
-    public void EraseAt(Vector2 pos)
+    public int EraseAt(Vector2 pos)
     {
         var normalizedPos = new Vector2(Mathf.InverseLerp(spriteRenderer.bounds.min.x, spriteRenderer.bounds.max.x, pos.x),
             Mathf.InverseLerp(spriteRenderer.bounds.min.y, spriteRenderer.bounds.max.y, pos.y));
-        EraseAt(normalizedPos.x, normalizedPos.y);
+        return EraseAt(normalizedPos.x, normalizedPos.y);
     }
 
-    public void EraseAt(float relX, float relY)
+    public int EraseAt(float relX, float relY)
     {
+        int erased = 0;
         int xStart = (int)(relX * maskTexture.width);
         int yStart = (int)(relY * maskTexture.height);
 
@@ -68,11 +72,17 @@ public class SpriteRendererEraser : MonoBehaviour
                 {
                     int px = xStart + x;
                     int py = yStart + y;
-
+                    
+                    if (maskTexture.GetPixel(px, py).r > 0f)
+                        continue;
+                    
+                    erased++;
                     maskTexture.SetPixel(px, py, Color.red);
                 }
             }
         }
+
+        return erased;
     }
     
     public void UpdateTexture()

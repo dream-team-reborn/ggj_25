@@ -21,6 +21,8 @@ public class PlayerManager : MonoBehaviour
     private Vector3 lastFramePos;
     private Rigidbody2D rb;
     
+    private int erasedPixels;
+    
     public void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -75,6 +77,7 @@ public class PlayerManager : MonoBehaviour
             transform.rotation = Quaternion.identity;
             virtualCamera.transform.rotation = Quaternion.identity;
             rb.velocity = Vector2.zero;
+            lastFramePos = transform.position;
         }
     }
 
@@ -91,7 +94,15 @@ public class PlayerManager : MonoBehaviour
             for (int i = 0; i < ticks; i++)
             {
                 var pos = lastFramePos + newDir * i / ticks;
-                eraser.EraseAt(pos);
+                erasedPixels += eraser.EraseAt(pos);
+            }
+            
+            float size = (float)eraser.MaskTexture.width * eraser.MaskTexture.height;
+            float percentage = erasedPixels / size;
+            Debug.Log($"Percentage: {percentage}");
+            if (percentage > 0.75f)
+            {
+                Debug.LogError("You win!");
             }
             
             eraser.UpdateTexture();
