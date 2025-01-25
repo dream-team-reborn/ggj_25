@@ -12,6 +12,8 @@ public class SpriteEraser : MonoBehaviour
     private Image _image;
     private Vector2 _prevMousePos;
 
+    public RectTransform RectTransform => _rectTransform;
+    
     void Start()
     {
         _image = GetComponent<Image>();
@@ -26,21 +28,24 @@ public class SpriteEraser : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(0))
-        {
-            Vector2 localMousePos;
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(_rectTransform, Input.mousePosition, null, out localMousePos);
-            Vector2 normalizedPos = Rect.PointToNormalized(_rectTransform.rect, localMousePos);
-
-            int x = (int)(normalizedPos.x * _eraseTexInstance.width);
-            int y = (int)(normalizedPos.y * _eraseTexInstance.height);
-
-            EraseAt(x, y);
-        }
+        // if (Input.GetMouseButton(0))
+        // {
+        //     Vector2 localMousePos;
+        //     RectTransformUtility.ScreenPointToLocalPointInRectangle(_rectTransform, Input.mousePosition, null, out localMousePos);
+        //     Vector2 normalizedPos = Rect.PointToNormalized(_rectTransform.rect, localMousePos);
+        //
+        //     int x = (int)(normalizedPos.x * _eraseTexInstance.width);
+        //     int y = (int)(normalizedPos.y * _eraseTexInstance.height);
+        //
+        //     EraseAt(x, y);
+        // }
     }
 
-    void EraseAt(int x, int y)
+    public void EraseAt(float xf, float yf)
     {
+        int x = (int)(xf * _eraseTexInstance.width);
+        int y = (int)(yf * _eraseTexInstance.height);
+        
         int radius = (int)brushSize / 2;
         for (int i = -radius; i <= radius; i++)
         {

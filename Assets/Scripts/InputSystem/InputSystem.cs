@@ -6,7 +6,8 @@ namespace InputSystem
     public interface IInput
     {
         void Initialize();
-        float GetInput();
+        float GetMovementInput();
+        sbyte GetRotationInput();
     }
 }
 
@@ -18,7 +19,8 @@ namespace InputSystem
         private static InputSystem instance;
         
         public static InputSystem Instance => instance;
-        public Action<float> OnInput;
+        public Action<float> OnMove;
+        public Action<sbyte> OnRotate;
         
         private void Awake()
         {
@@ -38,10 +40,14 @@ namespace InputSystem
         
         private void Update()
         {
-            float inputVal = input.GetInput();
+            float inputVal = input.GetMovementInput();
+            sbyte rotationInput = input.GetRotationInput();
             
             if (inputVal > 0f)
-                OnInput?.Invoke(inputVal);
+                OnMove?.Invoke(inputVal);
+            
+            if (rotationInput != 0)
+                OnRotate?.Invoke(rotationInput);
         }
     }
 }

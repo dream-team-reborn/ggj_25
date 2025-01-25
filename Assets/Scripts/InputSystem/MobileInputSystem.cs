@@ -23,7 +23,7 @@ namespace InputSystem
             }
         }
 
-        public float GetInput()
+        public float GetMovementInput()
         {
             if (!isMicrophoneInitialized || microphoneClip == null)
                 return 0f;
@@ -40,6 +40,11 @@ namespace InputSystem
                 return 1f;
 
             return 0f;
+        }
+        
+        public sbyte GetRotationInput()
+        {
+            return 0;
         }
         
         private float GetAverageVolume(float[] samples)

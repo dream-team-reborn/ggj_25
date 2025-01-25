@@ -9,9 +9,14 @@ namespace InputSystem
             
         }
 
-        public float GetInput()
+        public float GetMovementInput()
         {
             return Input.GetKey(KeyCode.Space) ? 1f : 0f;
+        }
+        
+        public sbyte GetRotationInput()
+        {
+            return (sbyte)(Input.GetKey(KeyCode.A) ? 1 : Input.GetKey(KeyCode.D) ? -1 : 0);
         }
     }
 }
