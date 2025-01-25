@@ -8,7 +8,9 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private float speed = 0.5f;
     [SerializeField] private SpriteEraser spriteEraser;
     [SerializeField] private CinemachineVirtualCamera virtualCamera;
-    
+    [SerializeField] private byte health;
+
+    private Vector3 startingPos;
     private Rigidbody2D rb;
     
     public void Start()
@@ -17,6 +19,8 @@ public class PlayerManager : MonoBehaviour
         
         InputSystem.InputSystem.Instance.OnMove += OnMove;
         InputSystem.InputSystem.Instance.OnRotate += OnRotate;
+        
+        startingPos = transform.position;
     }
 
     private void OnDestroy()
@@ -48,7 +52,16 @@ public class PlayerManager : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            Destroy(gameObject);
+            if (health == 0)
+            {
+                Destroy(gameObject);
+                return;
+            }
+            
+            health--;
+            transform.position = startingPos;
+            transform.rotation = Quaternion.identity;
+            virtualCamera.transform.rotation = Quaternion.identity;
         }
     }
 }
