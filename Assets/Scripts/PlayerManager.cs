@@ -1,4 +1,5 @@
 using System;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,6 +7,7 @@ public class PlayerManager : MonoBehaviour
 {
     [SerializeField] private float speed = 0.5f;
     [SerializeField] private SpriteEraser spriteEraser;
+    [SerializeField] private CinemachineVirtualCamera virtualCamera;
     
     private Rigidbody2D rb;
     
@@ -39,5 +41,6 @@ public class PlayerManager : MonoBehaviour
     private void OnRotate(sbyte dir)
     {
         transform.Rotate((Vector3.forward * (dir * 100 * Time.deltaTime)));
+        virtualCamera.transform.Rotate((Vector3.forward * (dir * 100 * Time.deltaTime)));
     }
 }
