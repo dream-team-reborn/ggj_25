@@ -1,7 +1,5 @@
-using System;
 using Cinemachine;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -10,6 +8,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private SpriteEraser spriteEraser;
     [SerializeField] private CinemachineVirtualCamera virtualCamera;
     [SerializeField] private byte health;
+    [SerializeField] private SpriteRendererEraser eraser;
 
     private Vector3 startingPos;
     private Rigidbody2D rb;
@@ -64,6 +63,14 @@ public class PlayerManager : MonoBehaviour
             transform.rotation = Quaternion.identity;
             virtualCamera.transform.rotation = Quaternion.identity;
             rb.velocity = Vector2.zero;
+        }
+    }
+
+    private void Update()
+    {
+        if (rb.velocity.magnitude > 0.1f)
+        {
+            eraser.EraseAt(transform.position);
         }
     }
 }

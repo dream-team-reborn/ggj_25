@@ -46,6 +46,13 @@ public class SpriteRendererEraser : MonoBehaviour
         }
     }
 
+    public void EraseAt(Vector2 pos)
+    {
+        // pos -= new Vector2(traceSize * 0.5f, traceSize * 0.5f);
+        Vector3 l = spriteRenderer.transform.InverseTransformPoint(pos);
+        EraseAt(l.x + 0.5f, l.y + 0.5f);
+    }
+
     public void EraseAt(float relX, float relY)
     {
         int xStart = Mathf.Clamp((int)(relX * maskTexture.width) - traceSize / 2, 0, maskTexture.width - traceSize);
