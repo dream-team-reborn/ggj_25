@@ -162,8 +162,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e442325e100fe7444bc2d50fc4008dcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 150
-  rotationSpeed: 400
+  speed: 120
+  rotationSpeed: 150
   spriteEraser: {fileID: 0}
   virtualCamera: {fileID: 0}
   health: 4
+  eraser: {fileID: 0}
