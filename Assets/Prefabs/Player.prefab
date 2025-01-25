@@ -163,6 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 300
+  rotationSpeed: 150
   spriteEraser: {fileID: 0}
   virtualCamera: {fileID: 0}
   health: 4

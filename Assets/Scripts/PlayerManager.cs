@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerManager : MonoBehaviour
 {
     [SerializeField] private float speed = 0.5f;
+    [SerializeField] private float rotationSpeed = 100f;
     [SerializeField] private SpriteEraser spriteEraser;
     [SerializeField] private CinemachineVirtualCamera virtualCamera;
     [SerializeField] private byte health;
@@ -44,7 +45,7 @@ public class PlayerManager : MonoBehaviour
     
     private void OnRotate(sbyte dir)
     {
-        transform.Rotate((Vector3.forward * (dir * 100 * Time.deltaTime)));
+        transform.Rotate((Vector3.forward * (dir * rotationSpeed * Time.deltaTime)));
         virtualCamera.transform.Rotate((Vector3.forward * (dir * 100 * Time.deltaTime)));
     }
 
