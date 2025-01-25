@@ -7,6 +7,7 @@ public class PlayerManager : MonoBehaviour
 {
     [SerializeField] private float speed = 0.5f;
     [SerializeField] private float rotationSpeed = 100f;
+    [SerializeField] private float stopThreshold = 20f;
     [SerializeField] private SpriteEraser spriteEraser;
     [SerializeField] private CinemachineVirtualCamera virtualCamera;
     [SerializeField] private byte health;
@@ -42,15 +43,10 @@ public class PlayerManager : MonoBehaviour
 
     private void OnMove(float obj)
     {
-        rb.AddForce(transform.up * speed, ForceMode2D.Impulse);
-
-        return;
-
-        Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(spriteEraser.RectTransform, screenPos, Camera.main, out var localPos);
-        Vector2 normalizedPos = Rect.PointToNormalized(spriteEraser.RectTransform.rect, localPos);
+        if (rb.velocity.magnitude > stopThreshold)
+            return;
         
-        spriteEraser.EraseAt(normalizedPos.x, normalizedPos.y);
+        rb.AddForce(transform.up * speed, ForceMode2D.Impulse);
     }
     
     private void OnRotate(sbyte dir)
