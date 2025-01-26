@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -17,6 +18,7 @@ public class SpriteRendererEraser : MonoBehaviour
     
     public SpriteRenderer SpriteRenderer => spriteRenderer;
     public Texture2D MaskTexture => maskTexture;
+    public Action OnMaskTextureReady;
 
     private void Start()
     {
@@ -36,6 +38,8 @@ public class SpriteRendererEraser : MonoBehaviour
         mat.SetTexture(ERASE_TX_NAME, maskTexture);
         
         spriteRenderer.material = mat;
+        
+        OnMaskTextureReady?.Invoke();
 
         // StartCoroutine(MoveTrace());
     }

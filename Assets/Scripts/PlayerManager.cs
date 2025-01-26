@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Cinemachine;
 using TMPro;
@@ -9,7 +10,6 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private float speed = 0.5f;
     [SerializeField] private float rotationSpeed = 100f;
     [SerializeField] private float stopThreshold = 20f;
-    [SerializeField] private SpriteEraser spriteEraser;
     [SerializeField] private CinemachineVirtualCamera virtualCamera;
     [SerializeField] private byte health;
     [SerializeField] private SpriteRendererEraser eraser;
@@ -17,15 +17,23 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private TMP_Text healthText;
     [SerializeField] private Image healthIcon;
     [SerializeField] private Sprite[] healthSprites; // ordered from the least filled
+    [SerializeField] private float winThreshold = 0.75f;
+    
+    public float maskTextureSize => (float)eraser.MaskTexture.width * eraser.MaskTexture.height;
+    public Action<int> OnErasedPixels;
+    public Action OnPlayerInitialized;
 
     private Vector3 startingPos;
     private Vector3 lastFramePos;
     private Rigidbody2D rb;
 
     private bool isFreezed;
-    
-    private int erasedPixels;
-    
+
+    public void Awake()
+    {
+        eraser.OnMaskTextureReady += () => OnPlayerInitialized?.Invoke();
+    }
+
     public void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -119,6 +127,7 @@ public class PlayerManager : MonoBehaviour
             newPos = transform.position;
             newDir = newPos - lastFramePos;
             int ticks = Mathf.CeilToInt(0.005f * rb.velocity.magnitude);
+            var erasedPixels = 0;
             
             for (int i = 0; i < ticks; i++)
             {
@@ -126,16 +135,16 @@ public class PlayerManager : MonoBehaviour
                 erasedPixels += eraser.EraseAt(pos);
             }
             
-            float size = (float)eraser.MaskTexture.width * eraser.MaskTexture.height;
-            float percentage = erasedPixels / size;
-            Debug.Log($"Percentage: {percentage}");
-            if (percentage > 0.75f)
-            {
-                Debug.LogError("You win!");
-            }
+            OnErasedPixels?.Invoke(erasedPixels);
             
             eraser.UpdateTexture();
             lastFramePos = transform.position;
         }
+    }
+
+    public void EndGame()
+    {
+        rb.velocity = Vector2.zero;
+        isFreezed = true;
     }
 }
