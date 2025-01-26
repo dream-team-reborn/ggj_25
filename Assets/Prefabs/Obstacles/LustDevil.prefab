@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 442863f11b41d4c07b907311a8a7bf65, type: 3}
   m_Color: {r: 0.20754719, g: 0.20754719, b: 0.20754719, a: 1}
   m_FlipX: 0
@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 608470406352651325}
   - component: {fileID: 433259540171740147}
   - component: {fileID: 8303657045983210125}
+  - component: {fileID: 1932808794774347386}
   m_Layer: 3
   m_Name: LustDevil
   m_TagString: Untagged
@@ -379,3 +380,15 @@ MonoBehaviour:
   m_LocalBounds:
     m_Center: {x: -0.11986017, y: -0.4827981, z: 0}
     m_Extent: {x: 7.6170583, y: 5.9474936, z: 0}
+--- !u!114 &1932808794774347386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711868475057903179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae039509b5e4f41059e1689fdc16e628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
