@@ -1,3 +1,4 @@
+using System.Collections;
 using Cinemachine;
 using TMPro;
 using UnityEngine;
@@ -20,6 +21,8 @@ public class PlayerManager : MonoBehaviour
     private Vector3 startingPos;
     private Vector3 lastFramePos;
     private Rigidbody2D rb;
+
+    private bool isFreezed;
     
     private int erasedPixels;
     
@@ -45,6 +48,9 @@ public class PlayerManager : MonoBehaviour
 
     private void OnMove(float obj)
     {
+        if (isFreezed)
+            return;
+        
         if (rb.velocity.magnitude > stopThreshold)
             return;
         
@@ -53,6 +59,9 @@ public class PlayerManager : MonoBehaviour
     
     private void OnRotate(sbyte dir)
     {
+        if (isFreezed)
+            return;
+        
         transform.Rotate((Vector3.forward * (dir * rotationSpeed * Time.deltaTime)));
         rb.velocity = transform.up * rb.velocity.magnitude;
         virtualCamera.transform.eulerAngles = transform.eulerAngles;
@@ -68,20 +77,31 @@ public class PlayerManager : MonoBehaviour
                 return;
             }
             
-            health--;
-            healthText.SetText(health.ToString());
-            healthIcon.sprite = healthSprites[Mathf.Min(health, healthSprites.Length - 1)];
             GetComponent<Animator>().SetTrigger("explode");
 
-
-            spray.GetComponent<Animator>().SetTrigger("spawn");
-            GetComponent<Animator>().SetTrigger("spawn");
-            transform.position = startingPos;
-            transform.rotation = Quaternion.identity;
-            virtualCamera.transform.rotation = Quaternion.identity;
+            isFreezed = true;
             rb.velocity = Vector2.zero;
-            lastFramePos = transform.position;
+            StartCoroutine(Respawn());
         }
+    }
+
+    private IEnumerator Respawn()
+    {
+        yield return new WaitForSeconds(1f);
+        
+        health--;
+        healthText.SetText(health.ToString());
+        healthIcon.sprite = healthSprites[Mathf.Min(health, healthSprites.Length - 1)];
+        
+        spray.GetComponent<Animator>().SetTrigger("spawn");
+        GetComponent<Animator>().SetTrigger("spawn");
+        transform.position = startingPos;
+        transform.rotation = Quaternion.identity;
+        virtualCamera.transform.rotation = Quaternion.identity;
+        lastFramePos = transform.position;
+
+        yield return new WaitForSeconds(1f);
+        isFreezed = false;
     }
 
     private Vector3 newPos, newDir;
