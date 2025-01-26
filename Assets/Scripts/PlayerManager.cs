@@ -22,6 +22,7 @@ public class PlayerManager : MonoBehaviour
     public float maskTextureSize => (float)eraser.MaskTexture.width * eraser.MaskTexture.height;
     public Action<int> OnErasedPixels;
     public Action OnPlayerInitialized;
+    public Action OnPlayerDied;
 
     private Vector3 startingPos;
     private Vector3 lastFramePos;
@@ -79,14 +80,14 @@ public class PlayerManager : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
+            GetComponent<Animator>().SetTrigger("explode");
+            
             if (health == 0)
             {
-                Destroy(gameObject);
+                OnPlayerDied?.Invoke();
                 return;
             }
             
-            GetComponent<Animator>().SetTrigger("explode");
-
             isFreezed = true;
             rb.velocity = Vector2.zero;
             StartCoroutine(Respawn());
