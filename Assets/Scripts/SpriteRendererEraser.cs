@@ -27,6 +27,7 @@ public class SpriteRendererEraser : MonoBehaviour
     private void Start()
     {
         mat = new Material(Shader.Find("Shader Graphs/ErasableSprite"));
+        propBlock = new MaterialPropertyBlock();
         
         maskTexture = new Texture2D(spriteRenderer.sprite.texture.width * 2, spriteRenderer.sprite.texture.height * 2, TextureFormat.RG16, false);
         
@@ -38,8 +39,10 @@ public class SpriteRendererEraser : MonoBehaviour
         maskTexture.Apply();
         cleanTex.Apply();
         
-        mat.SetTexture(MAIN_TX_NAME, spriteRenderer.sprite.texture);
-        mat.SetTexture(ERASE_TX_NAME, maskTexture);
+        spriteRenderer.GetPropertyBlock(propBlock);
+        propBlock.SetTexture(MAIN_TX_NAME, spriteRenderer.sprite.texture);
+        propBlock.SetTexture(ERASE_TX_NAME, maskTexture);
+        spriteRenderer.SetPropertyBlock(propBlock);
         
         spriteRenderer.material = mat;
         
@@ -96,7 +99,9 @@ public class SpriteRendererEraser : MonoBehaviour
     public void UpdateTexture()
     {
         maskTexture.Apply();
-        mat.SetTexture(ERASE_TX_NAME, maskTexture);
+        spriteRenderer.GetPropertyBlock(propBlock);
+        propBlock.SetTexture(ERASE_TX_NAME, maskTexture);
+        spriteRenderer.SetPropertyBlock(propBlock);
     }
 
     public void ResetTexture()
@@ -108,6 +113,8 @@ public class SpriteRendererEraser : MonoBehaviour
 
     public void ApplyMask()
     {
-        mat.SetTexture(ERASE_TX_NAME, maskTexture);
+        spriteRenderer.GetPropertyBlock(propBlock);
+        propBlock.SetTexture(ERASE_TX_NAME, maskTexture);
+        spriteRenderer.SetPropertyBlock(propBlock);
     }
 }
