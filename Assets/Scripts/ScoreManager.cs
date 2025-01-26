@@ -1,4 +1,6 @@
-﻿using TMPro;
+﻿using System;
+using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -66,8 +68,28 @@ public class ScoreManager : MonoBehaviour
 
     private void EndGame(bool win)
     {
+        playerManager.EndGame();
+
+        if (!win)
+        {
+            ShowEndUI(win);
+            return;
+        }
+        
+        CutsceneManager.Instance.StartCutscene(ShowEndUI, win);
+    }
+    
+    private void ShowEndUI(bool win)
+    {
         endGO.SetActive(true);
         endText.SetText(win ? winText : loseText);
-        playerManager.EndGame();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.L))
+        {
+            EndGame(true);
+        }
     }
 }
