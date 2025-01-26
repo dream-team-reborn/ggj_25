@@ -12,6 +12,8 @@ public class CutsceneManager : MonoBehaviour
     [SerializeField] private GameObject cutsceneVirtualCamera;
     [SerializeField] private GameObject sparkles;
     [SerializeField] private SpriteRendererEraser eraser;
+    [SerializeField] private GameObject dirtyImage;
+    [SerializeField] private GameObject obstaclesHolder;
     
     private void Awake()
     {
@@ -30,12 +32,17 @@ public class CutsceneManager : MonoBehaviour
     {
         gameVirtualCamera.SetActive(false);
         cutsceneVirtualCamera.SetActive(true);
-        eraser.ResetTexture();
+        dirtyImage.SetActive(true);
+        for (int i = 0; i < obstaclesHolder.transform.childCount; i++)
+        {
+            obstaclesHolder.transform.GetChild(i).gameObject.SetActive(false);
+        }
         
         yield return new WaitForSeconds(5f);
         
         sparkles.SetActive(true);
-        eraser.ApplyMask();
+        dirtyImage.SetActive(false);
+        
         HapticFeedback.LightFeedback();
 
         yield return new WaitForSeconds(3f);
