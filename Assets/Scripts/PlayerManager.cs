@@ -93,12 +93,18 @@ public class PlayerManager : MonoBehaviour
         healthText.SetText(health.ToString());
         healthIcon.sprite = healthSprites[Mathf.Min(health, healthSprites.Length - 1)];
         
-        spray.GetComponent<Animator>().SetTrigger("spawn");
-        GetComponent<Animator>().SetTrigger("spawn");
         transform.position = startingPos;
         transform.rotation = Quaternion.identity;
         virtualCamera.transform.rotation = Quaternion.identity;
         lastFramePos = transform.position;
+
+        yield return new WaitForSeconds(0.5f);
+        
+        spray.GetComponent<Animator>().SetTrigger("spawn");
+        
+        yield return new WaitForSeconds(0.2f);
+        
+        GetComponent<Animator>().SetTrigger("spawn");
 
         yield return new WaitForSeconds(1f);
         isFreezed = false;
