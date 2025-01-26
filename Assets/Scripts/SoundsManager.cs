@@ -17,6 +17,7 @@ public class SoundsManager : MonoBehaviour
     [SerializeField] private Audio playerMovingClip;
     [SerializeField] private Audio playerSpawnedClip;
     [SerializeField] private Audio playerEnemyHitClip;
+    [SerializeField] private Audio sprayClip;
     
     private AudioSource audioSource;
 
@@ -25,11 +26,15 @@ public class SoundsManager : MonoBehaviour
         playerManager.OnPlayerCollided += OnPlayerCollided;
         playerManager.OnPlayerMoving += OnPlayerMoving;
         playerManager.OnPlayerSpawned += OnPlayerSpawned;
+        playerManager.OnSprayed += OnSprayed;
         audioSource = playerManager.AudioSource;
     }
 
     private void PlayAudio(Audio a)
     {
+        if (a == null || a.Clip == null)
+            return;
+        
         audioSource.clip = a.Clip;
         audioSource.volume = a.Volume;
         
@@ -45,6 +50,11 @@ public class SoundsManager : MonoBehaviour
     private void OnPlayerSpawned()
     {
         PlayAudio(playerSpawnedClip);
+    }
+    
+    private void OnSprayed()
+    {
+        PlayAudio(sprayClip);
     }
 
     private void OnPlayerCollided(CollisionType obj)

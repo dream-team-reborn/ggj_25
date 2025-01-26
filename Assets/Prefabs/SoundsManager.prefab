@@ -58,3 +58,6 @@ MonoBehaviour:
   playerEnemyHitClip:
     Clip: {fileID: 8300000, guid: c76719b6cc7f7c54baa9cc5675b10a35, type: 3}
     Volume: 1
+  sprayClip:
+    Clip: {fileID: 8300000, guid: c0557367d357daf41a67c2075703004b, type: 3}
+    Volume: 1

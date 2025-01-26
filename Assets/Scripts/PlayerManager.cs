@@ -39,6 +39,7 @@ public class PlayerManager : MonoBehaviour
     public Action<CollisionType> OnPlayerCollided;
     public Action<float> OnPlayerMoving;
     public Action OnPlayerSpawned;
+    public Action OnSprayed;
 
     private Vector3 startingPos;
     private Vector3 lastFramePos;
@@ -66,7 +67,7 @@ public class PlayerManager : MonoBehaviour
         startingPos = transform.position;
         lastFramePos = transform.position;
 
-        spray.GetComponent<Animator>().SetTrigger("spawn");
+        DoSpray();
         healthText.SetText(health.ToString());
     }
 
@@ -144,7 +145,7 @@ public class PlayerManager : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
         
-        spray.GetComponent<Animator>().SetTrigger("spawn");
+        DoSpray();
         
         yield return new WaitForSeconds(0.2f);
         
@@ -187,5 +188,11 @@ public class PlayerManager : MonoBehaviour
     {
         rb.velocity = Vector2.zero;
         isFreezed = true;
+    }
+
+    private void DoSpray()
+    {
+        spray.GetComponent<Animator>().SetTrigger("spawn");
+        OnSprayed?.Invoke();
     }
 }
