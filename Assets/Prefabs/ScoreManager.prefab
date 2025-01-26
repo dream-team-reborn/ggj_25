@@ -48,7 +48,7 @@ MonoBehaviour:
   endGO: {fileID: 0}
   endText: {fileID: 0}
   scoreText: {fileID: 0}
-  winThreshold: 0.05
-  maxScoreCorrection: 0.9
+  winThreshold: 1
+  maxScoreCorrection: 0.18
   winText: You win!
   loseText: Sins wins!
