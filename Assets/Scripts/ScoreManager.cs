@@ -27,7 +27,7 @@ public class ScoreManager : MonoBehaviour
         playerManager.OnPlayerInitialized += Initialize;
         playerManager.OnPlayerDied += OnPlayerDied;
         endGO.SetActive(false);
-        scoreText.text = "0 %";
+        scoreText.text = "0";
     }
 
     private void OnPlayerDied()
