@@ -8,6 +8,8 @@ using UnityEngine.VFX;
 
 public class PlayerManager : MonoBehaviour
 {
+    public static PlayerManager Instance;
+    
     [SerializeField] private float speed = 0.5f;
     [SerializeField] private float rotationSpeed = 100f;
     [SerializeField] private float stopThreshold = 20f;
@@ -35,6 +37,11 @@ public class PlayerManager : MonoBehaviour
 
     public void Awake()
     {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+        
         eraser.OnMaskTextureReady += () => OnPlayerInitialized?.Invoke();
     }
 
