@@ -4,7 +4,7 @@ namespace InputSystem
 {
     public class MobileInputSystem : IInput
     {
-        private const float threshold = 0.1f;
+        private const float threshold = 0.15f;
         
         private AudioClip microphoneClip;
         private string microphoneName;
