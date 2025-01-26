@@ -4,6 +4,7 @@ using Cinemachine;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.VFX;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private Image healthIcon;
     [SerializeField] private Sprite[] healthSprites; // ordered from the least filled
     [SerializeField] private float winThreshold = 0.75f;
+
+    [SerializeField] private VisualEffect trailVfx;
     
     public float maskTextureSize => (float)eraser.MaskTexture.width * eraser.MaskTexture.height;
     public Action<int> OnErasedPixels;
@@ -141,6 +144,8 @@ public class PlayerManager : MonoBehaviour
             eraser.UpdateTexture();
             lastFramePos = transform.position;
         }
+
+        trailVfx.SetVector2("Lifetime", new Vector2(Mathf.Clamp(rb.velocity.magnitude * 0.01f, 0, 1), Mathf.Clamp(rb.velocity.magnitude * 0.01f ,0, 3)));
     }
 
     public void EndGame()
