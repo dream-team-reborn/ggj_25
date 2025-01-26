@@ -108,7 +108,721 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Demone-lussuria-side_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 9792
+        width: 1740
+        height: 1632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88db5ccac8cb0463388a9fe3f06e750d
+      internalID: 334734884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demone-lussuria-side_1
+      rect:
+        serializedVersion: 2
+        x: 1740
+        y: 9792
+        width: 1740
+        height: 1632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9533d915af9ba4d5ca6d00512fdaade9
+      internalID: -1170520287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demone-lussuria-side_2
+      rect:
+        serializedVersion: 2
+        x: 3480
+        y: 9792
+        width: 1740
+        height: 1632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73758f4b294a54dd092ed2561513b223
+      internalID: -1348116544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demone-lussuria-side_3
+      rect:
+        serializedVersion: 2
+        x: 5220
+        y: 9792
+        width: 1740
+        height: 1632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1ca40a34401548a1bef30f472ef6909
+      internalID: -572212280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demone-lussuria-side_4
+      rect:
+        serializedVersion: 2
+        x: 6960
+        y: 9792
+        width: 1740
+        height: 1632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7b5c442b977f4a03a09a1ff8ab5418e
+      internalID: 410985242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demone-lussuria-side_5
+      rect:
+        serializedVersion: 2
+        x: 8700
+        y: 9792
+        width: 1740
+        height: 1632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1f5bebfb66b84c48a8730ad384bc2f8
+      internalID: 260813471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demone-lussuria-side_6
+      rect:
+        serializedVersion: 2
+        x: 10440
+        y: 9792
+        width: 1740
+        height: 1632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04e61ff6b72644bf5b59cb9a92c2deb7
+      internalID: -197906325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demone-lussuria-side_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8160
+        width: 1740
+        height: 1632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a032b41175074c4abfe33e49dec5e28
+      internalID: -1261920895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demone-lussuria-side_8
+      rect:
+        serializedVersion: 2
+        x: 1740
+        y: 8160
+        width: 1740
+        height: 1632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9719f8296d1fd45f3a932051a06952c2
+      internalID: -2080393618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demone-lussuria-side_9
+      rect:
+        serializedVersion: 2
+        x: 3480
+        y: 8160
+        width: 1740
+        height: 1632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad6f52189537347fa8113dfd486faf18
+      internalID: 1926145285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demone-lussuria-side_10
+      rect:
+        serializedVersion: 2
+        x: 5220
+        y: 8160
+        width: 1740
+        height: 1632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d1a59c89d43d494d9d47b742618bd3f
+      internalID: -1833321238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demone-lussuria-side_11
+      rect:
+        serializedVersion: 2
+        x: 6960
+        y: 8160
+        width: 1740
+        height: 1632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b339440df95874bd89bfc8646aed95c2
+      internalID: -1951348930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demone-lussuria-side_12
+      rect:
+        serializedVersion: 2
+        x: 8700
+        y: 8160
+        width: 1740
+        height: 1632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b60cb93331e3401abf83df5f251e3cc
+      internalID: -318278257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demone-lussuria-side_13
+      rect:
+        serializedVersion: 2
+        x: 10440
+        y: 8160
+        width: 1740
+        height: 1632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b555e12e838c349dab12edeeb8cf2819
+      internalID: 443520710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demone-lussuria-side_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6528
+        width: 1740
+        height: 1632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 405ca87186c2d4c348e80f27706fd87a
+      internalID: -1989172465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demone-lussuria-side_15
+      rect:
+        serializedVersion: 2
+        x: 1740
+        y: 6528
+        width: 1740
+        height: 1632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f14589a5b7ac462e8d6172dae276f8d
+      internalID: -773990844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demone-lussuria-side_16
+      rect:
+        serializedVersion: 2
+        x: 3480
+        y: 6528
+        width: 1740
+        height: 1632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b307377758f14f279ea98a283a254e7
+      internalID: -1230668732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demone-lussuria-side_17
+      rect:
+        serializedVersion: 2
+        x: 5220
+        y: 6528
+        width: 1740
+        height: 1632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 693d16c265bc24ec682eabba9b532031
+      internalID: 138309743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demone-lussuria-side_18
+      rect:
+        serializedVersion: 2
+        x: 6960
+        y: 6528
+        width: 1740
+        height: 1632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 666fc82ae22d449c29f72d38b37ad0ff
+      internalID: -1661702063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demone-lussuria-side_19
+      rect:
+        serializedVersion: 2
+        x: 8700
+        y: 6528
+        width: 1740
+        height: 1632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8628b451f1c20447393c50424b25b234
+      internalID: -1231071572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demone-lussuria-side_20
+      rect:
+        serializedVersion: 2
+        x: 10440
+        y: 6528
+        width: 1740
+        height: 1632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b050419fbefe4426cb6de0771c1e9b5c
+      internalID: 1157209033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demone-lussuria-side_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4896
+        width: 1740
+        height: 1632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12c73818da62443c6a4adef41f44ad14
+      internalID: 1524767007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demone-lussuria-side_22
+      rect:
+        serializedVersion: 2
+        x: 1740
+        y: 4896
+        width: 1740
+        height: 1632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c5e66768ba13409b96f0daeb6f2a9fc
+      internalID: -1037948787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demone-lussuria-side_23
+      rect:
+        serializedVersion: 2
+        x: 3480
+        y: 4896
+        width: 1740
+        height: 1632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f8ad0cb3faf64b1fb7524f27fc2fa7c
+      internalID: -490942193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demone-lussuria-side_24
+      rect:
+        serializedVersion: 2
+        x: 5220
+        y: 4896
+        width: 1740
+        height: 1632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d68a9b123efd42c58e83e10471fca5c
+      internalID: -140454156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demone-lussuria-side_25
+      rect:
+        serializedVersion: 2
+        x: 6960
+        y: 4896
+        width: 1740
+        height: 1632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c790ec3ce204444eab1938794a527903
+      internalID: 583863780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demone-lussuria-side_26
+      rect:
+        serializedVersion: 2
+        x: 8700
+        y: 4896
+        width: 1740
+        height: 1632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bcf65ac43fe2463181259f57e2ff2e3
+      internalID: 901222761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demone-lussuria-side_27
+      rect:
+        serializedVersion: 2
+        x: 10440
+        y: 4896
+        width: 1740
+        height: 1632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c524831c79dfd4ad7b34ce0f694445cb
+      internalID: 87809470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demone-lussuria-side_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3264
+        width: 1740
+        height: 1632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 672d7237e62024ef487f95062ea2139c
+      internalID: 80196646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demone-lussuria-side_29
+      rect:
+        serializedVersion: 2
+        x: 1740
+        y: 3264
+        width: 1740
+        height: 1632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b3e8cb832d2e4f10bfff0ea261aa20a
+      internalID: 214520353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demone-lussuria-side_30
+      rect:
+        serializedVersion: 2
+        x: 3480
+        y: 3264
+        width: 1740
+        height: 1632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e80232587f907484abd04d393bf52697
+      internalID: -198704200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demone-lussuria-side_31
+      rect:
+        serializedVersion: 2
+        x: 5220
+        y: 3264
+        width: 1740
+        height: 1632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53bb3cc18cf36406599746def4bbaf29
+      internalID: -694368577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demone-lussuria-side_32
+      rect:
+        serializedVersion: 2
+        x: 6960
+        y: 3264
+        width: 1740
+        height: 1632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c1ff529dcb39438f993711c53a7f198
+      internalID: 1070419628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demone-lussuria-side_33
+      rect:
+        serializedVersion: 2
+        x: 8700
+        y: 3264
+        width: 1740
+        height: 1632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afd83010ba94a40d8b8042447e259b3f
+      internalID: 1728812606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +833,41 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Demone-lussuria-side_0: 334734884
+      Demone-lussuria-side_1: -1170520287
+      Demone-lussuria-side_10: -1833321238
+      Demone-lussuria-side_11: -1951348930
+      Demone-lussuria-side_12: -318278257
+      Demone-lussuria-side_13: 443520710
+      Demone-lussuria-side_14: -1989172465
+      Demone-lussuria-side_15: -773990844
+      Demone-lussuria-side_16: -1230668732
+      Demone-lussuria-side_17: 138309743
+      Demone-lussuria-side_18: -1661702063
+      Demone-lussuria-side_19: -1231071572
+      Demone-lussuria-side_2: -1348116544
+      Demone-lussuria-side_20: 1157209033
+      Demone-lussuria-side_21: 1524767007
+      Demone-lussuria-side_22: -1037948787
+      Demone-lussuria-side_23: -490942193
+      Demone-lussuria-side_24: -140454156
+      Demone-lussuria-side_25: 583863780
+      Demone-lussuria-side_26: 901222761
+      Demone-lussuria-side_27: 87809470
+      Demone-lussuria-side_28: 80196646
+      Demone-lussuria-side_29: 214520353
+      Demone-lussuria-side_3: -572212280
+      Demone-lussuria-side_30: -198704200
+      Demone-lussuria-side_31: -694368577
+      Demone-lussuria-side_32: 1070419628
+      Demone-lussuria-side_33: 1728812606
+      Demone-lussuria-side_4: 410985242
+      Demone-lussuria-side_5: 260813471
+      Demone-lussuria-side_6: -197906325
+      Demone-lussuria-side_7: -1261920895
+      Demone-lussuria-side_8: -2080393618
+      Demone-lussuria-side_9: 1926145285
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
