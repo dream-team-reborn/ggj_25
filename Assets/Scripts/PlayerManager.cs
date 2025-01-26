@@ -7,6 +7,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.VFX;
 
+public enum CollisionType
+{
+    Enemy, Generic, BouncingWall
+}
+
 public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance;
@@ -21,14 +26,19 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private TMP_Text healthText;
     [SerializeField] private Image healthIcon;
     [SerializeField] private Sprite[] healthSprites; // ordered from the least filled
-    [SerializeField] private float winThreshold = 0.75f;
+    // [SerializeField] private float winThreshold = 0.75f;
+    [SerializeField] private AudioSource audioSource;
 
     [SerializeField] private VisualEffect trailVfx;
     
     public float maskTextureSize => (float)eraser.MaskTexture.width * eraser.MaskTexture.height;
+    public AudioSource AudioSource => audioSource;
     public Action<int> OnErasedPixels;
     public Action OnPlayerInitialized;
     public Action OnPlayerDied;
+    public Action<CollisionType> OnPlayerCollided;
+    public Action<float> OnPlayerMoving;
+    public Action OnPlayerSpawned;
 
     private Vector3 startingPos;
     private Vector3 lastFramePos;
@@ -91,6 +101,8 @@ public class PlayerManager : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
+            OnPlayerCollided?.Invoke(CollisionType.Enemy);
+            
             GetComponent<Animator>().SetTrigger("explode");
             
             if (health == 0)
@@ -103,9 +115,13 @@ public class PlayerManager : MonoBehaviour
             rb.velocity = Vector2.zero;
             StartCoroutine(Respawn());
         }
+        else if (other.gameObject.layer == LayerMask.NameToLayer("Default")) {
+            OnPlayerCollided?.Invoke(CollisionType.Generic);
+        }
         else if (other.gameObject.layer == LayerMask.NameToLayer("BouncingWall"))
         {
             HapticFeedback.MediumFeedback();
+            OnPlayerCollided?.Invoke(CollisionType.BouncingWall);
         }
     }
 
@@ -136,6 +152,7 @@ public class PlayerManager : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
         isFreezed = false;
+        OnPlayerSpawned?.Invoke();
     }
 
     private Vector3 newPos, newDir;
@@ -160,6 +177,8 @@ public class PlayerManager : MonoBehaviour
             eraser.UpdateTexture();
             lastFramePos = transform.position;
         }
+        
+        OnPlayerMoving?.Invoke(rb.velocity.magnitude);
 
         trailVfx.SetVector2("Lifetime", new Vector2(Mathf.Clamp(rb.velocity.magnitude * 0.01f, 0, 1), Mathf.Clamp(rb.velocity.magnitude * 0.01f ,0, 3)));
     }
