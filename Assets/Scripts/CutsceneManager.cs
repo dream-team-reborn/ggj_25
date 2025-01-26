@@ -33,7 +33,7 @@ public class CutsceneManager : MonoBehaviour
         
         yield return new WaitForSeconds(5f);
         
-        sparkles.SetActive(false);
+        sparkles.SetActive(true);
         eraser.ApplyMask();
 
         yield return new WaitForSeconds(3f);
