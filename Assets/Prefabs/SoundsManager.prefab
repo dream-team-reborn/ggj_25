@@ -47,17 +47,17 @@ MonoBehaviour:
   playerManager: {fileID: 0}
   movingThreshold: 50
   playerCollidedClip:
-    Clip: {fileID: 8300000, guid: 5cd474e457184e74396695c2697a111f, type: 3}
+    Clip: {fileID: 8300000, guid: c0557367d357daf41a67c2075703004b, type: 3}
     Volume: 1
   playerMovingClip:
-    Clip: {fileID: 8300000, guid: 7c6a8543983dfec4f8d5cacf69a239ec, type: 3}
-    Volume: 0.5
+    Clip: {fileID: 8300000, guid: 09d4e5216dc41d3468a127826f86f5a8, type: 3}
+    Volume: 0.1
   playerSpawnedClip:
-    Clip: {fileID: 8300000, guid: 401f15ca57d107445acee5b83cf2d639, type: 3}
+    Clip: {fileID: 8300000, guid: 7c6a8543983dfec4f8d5cacf69a239ec, type: 3}
     Volume: 1
   playerEnemyHitClip:
-    Clip: {fileID: 8300000, guid: c76719b6cc7f7c54baa9cc5675b10a35, type: 3}
+    Clip: {fileID: 8300000, guid: 401f15ca57d107445acee5b83cf2d639, type: 3}
     Volume: 1
   sprayClip:
-    Clip: {fileID: 8300000, guid: c0557367d357daf41a67c2075703004b, type: 3}
+    Clip: {fileID: 8300000, guid: 5cd474e457184e74396695c2697a111f, type: 3}
     Volume: 1
