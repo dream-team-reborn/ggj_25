@@ -247,7 +247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 666
   rotationSpeed: 150
-  stopThreshold: 50
+  stopThreshold: 75
   spriteEraser: {fileID: 0}
   virtualCamera: {fileID: 0}
   health: 3
