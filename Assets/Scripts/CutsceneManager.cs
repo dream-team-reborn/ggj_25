@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using CandyCoded.HapticFeedback;
 using UnityEngine;
 
 public class CutsceneManager : MonoBehaviour
@@ -35,6 +36,7 @@ public class CutsceneManager : MonoBehaviour
         
         sparkles.SetActive(true);
         eraser.ApplyMask();
+        HapticFeedback.LightFeedback();
 
         yield return new WaitForSeconds(3f);
 

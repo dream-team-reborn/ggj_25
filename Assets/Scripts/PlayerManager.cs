@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using CandyCoded.HapticFeedback;
 using Cinemachine;
 using TMPro;
 using UnityEngine;
@@ -102,11 +103,19 @@ public class PlayerManager : MonoBehaviour
             rb.velocity = Vector2.zero;
             StartCoroutine(Respawn());
         }
+        else if (other.gameObject.layer == LayerMask.NameToLayer("BouncingWall"))
+        {
+            HapticFeedback.MediumFeedback();
+        }
     }
 
     private IEnumerator Respawn()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.2f);
+        
+        HapticFeedback.HeavyFeedback();
+        
+        yield return new WaitForSeconds(0.8f);
         
         health--;
         healthText.SetText(health.ToString());

@@ -20,19 +20,19 @@ public class SpriteRendererEraser : MonoBehaviour
     public Texture2D MaskTexture => maskTexture;
     public Action OnMaskTextureReady;
 
-    private Texture2D cleanTex;
+    private MaterialPropertyBlock propBlock;
+    
+    [SerializeField] private Texture2D cleanTex;
 
     private void Start()
     {
         mat = new Material(Shader.Find("Shader Graphs/ErasableSprite"));
         
         maskTexture = new Texture2D(spriteRenderer.sprite.texture.width * 2, spriteRenderer.sprite.texture.height * 2, TextureFormat.RG16, false);
-        cleanTex = new Texture2D(spriteRenderer.sprite.texture.width * 2, spriteRenderer.sprite.texture.height * 2, TextureFormat.RG16, false);
-
+        
         for (int y = 0; y < maskTexture.height; y++) {
             for (int x = 0; x < maskTexture.width; x++) {
                 maskTexture.SetPixel(x, y, Color.clear);
-                cleanTex.SetPixel(x, y, Color.clear);
             }
         }
         maskTexture.Apply();
@@ -101,7 +101,9 @@ public class SpriteRendererEraser : MonoBehaviour
 
     public void ResetTexture()
     {
-        mat.SetTexture(ERASE_TX_NAME, cleanTex);
+        spriteRenderer.GetPropertyBlock(propBlock);
+        propBlock.SetTexture(ERASE_TX_NAME, cleanTex);
+        spriteRenderer.SetPropertyBlock(propBlock);
     }
 
     public void ApplyMask()

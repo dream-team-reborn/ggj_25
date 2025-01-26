@@ -13,6 +13,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dildo Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4735442331339477650, guid: 7f82b5b5c74bc443f82833b53e7a0404,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6386148896743643158, guid: 7f82b5b5c74bc443f82833b53e7a0404,
         type: 3}
       propertyPath: m_Size.x
@@ -216,7 +221,7 @@ MonoBehaviour:
   - {x: -7.4655447, y: -12.03568, z: 0}
   m_ShapePathHash: -1291817354
   m_Mesh: {fileID: 0}
-  m_InstanceId: 106198
+  m_InstanceId: 46196
   m_LocalBounds:
     m_Center: {x: -0.022450924, y: 0.061460495, z: 0}
     m_Extent: {x: 7.6782227, y: 18.019337, z: 0}

@@ -13,6 +13,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vibratore Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4735442331339477650, guid: 7f82b5b5c74bc443f82833b53e7a0404,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6386148896743643158, guid: 7f82b5b5c74bc443f82833b53e7a0404,
         type: 3}
       propertyPath: m_Size.x
@@ -191,7 +196,7 @@ MonoBehaviour:
   - {x: -1.7341871, y: -20.778694, z: 0}
   m_ShapePathHash: -1047755048
   m_Mesh: {fileID: 0}
-  m_InstanceId: -423730
+  m_InstanceId: 46180
   m_LocalBounds:
     m_Center: {x: 0.373394, y: 0.3302307, z: 0}
     m_Extent: {x: 5.73293, y: 21.300705, z: 0}
